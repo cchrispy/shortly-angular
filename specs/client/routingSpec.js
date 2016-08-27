@@ -31,4 +31,10 @@ describe('Routing', function () {
     expect($route.routes['/shorten'].controller).to.equal('ShortenController');
     expect($route.routes['/shorten'].templateUrl).to.equal('app/shorten/shorten.html');
   });
+
+  it('Should have /logout route, template, and controller', function () {
+    expect($route.routes['/logout']).to.be.defined;
+    expect($route.routes['/logout'].controller).to.equal('LogoutController');
+    expect($route.routes['/logout'].templateUrl).to.equal('app/logout/logout.html');
+  });
 });

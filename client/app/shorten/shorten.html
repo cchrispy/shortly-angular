@@ -6,15 +6,15 @@
     <li><a href='#/shorten' class='create'>Shorten</a></li>
   </ul>
 
-    <a href='/logout' class='logout'>Logout</a>
+    <a href='#/logout' class='logout'>Logout</a>
     </div>
   <form name="form">
-    <input name="url" ng-model='link' ng-pattern="rValidUrl"/>
+    <input name="url" ng-model='link.url' ng-pattern="rValidUrl"/>
     <button type='submit' ng-click='addLink()' ng-disabled='form.url.$invalid'>Shorten!</button>
   </form>
-  <p ng-show="form.url.$invalid">URL invalid {{ link }} </p>
+  <p ng-show="form.url.$invalid">URL invalid!</p>
 
-  <div>
+  <div ng-show="baseUrl">
     <!-- <img src='/redirect_icon.png'/> -->
     <div class='info'>
       <!-- <div class='visits'><span class='count'>{{visits}}</span>Visits</div> -->
@@ -25,5 +25,3 @@
   </div>
 
 </div>
-
-

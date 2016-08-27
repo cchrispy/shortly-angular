@@ -1,8 +1,8 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links, $location, $window) {
+.controller('LinksController', function ($scope, links, $location, $window) {
   // Your code here
-  $scope.data = { links: [] };
+  $scope.data = { links: links };
 
   
   var jwt = $window.localStorage.getItem('com.shortly');
@@ -11,10 +11,10 @@ angular.module('shortly.links', [])
     $location.path('/signin');
   }
 
-  Links.getAll().then(function(results) {
-    console.log(results);
-    $scope.data.links = results;
-  });
+  // Links.getAll().then(function(results) {
+  //   console.log('LINKS CONTROLLER', results);
+  //   $scope.data.links = results;
+  // });
 
   // $scope.redirect = function(path) {
   //   $location.path(path);

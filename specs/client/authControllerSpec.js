@@ -56,12 +56,4 @@ describe('AuthController', function () {
     expect($scope.signin).to.be.a('function');
   });
 
-  it('should store token in localStorage after signin', function () {
-    // create a fake JWT for auth
-    var token = 'sjj232hwjhr3urw90rof';
-    $httpBackend.expectPOST('/api/users/signin').respond({token: token});
-    $scope.signin();
-    $httpBackend.flush();
-    expect($window.localStorage.getItem('com.shortly')).to.equal(token);
-  });
 });

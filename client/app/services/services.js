@@ -15,13 +15,17 @@ angular.module('shortly.services', [])
       return $http({
         method: 'POST',
         url: '/api/links',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: JSON.stringify({ url: data })
-      }).then(function(result) {
-        return result;
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // },
+        data: JSON.stringify(data)
       });
+      // .then(function(result) {
+      //   console.log('RESULT: ', result.data);
+      //   return result.data;
+      // }).catch(function(err) {
+      //   console.log('ADDONE ERROR: ', err);
+      // });
     }
   };
 })
