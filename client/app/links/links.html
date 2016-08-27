@@ -8,4 +8,14 @@
 
     <a href='/logout' class='logout'>Logout</a>
     </div>
+  <div>
+  <label>Search: <input ng-model="searchText"></label>
+    <ul>
+      <li ng-repeat='link in data.links | orderBy: "-visits" | filter:searchText'>
+        <p>{{ link.title }}</p>
+        <a href="{{ link.baseUrl }}/{{ link.code }}">{{ link.baseUrl }}/{{ link.code }}</a>
+        <p>{{ link.visits }}</p>
+      </li>
+    </ul>
+  </div>
 </div>
