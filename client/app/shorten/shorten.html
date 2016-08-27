@@ -2,15 +2,28 @@
 <!-- Your code here -->
   <div class='navigation'>
   <ul>
-    <li><a href='#/links' ng-click="redirect('/links')" class='index'>All Links</a></li>
-    <li><a href='#/shorten' ng-click="redirect('/shorten')" class='create'>Shorten</a></li>
+    <li><a href='#/links' class='index'>All Links</a></li>
+    <li><a href='#/shorten' class='create'>Shorten</a></li>
   </ul>
 
     <a href='/logout' class='logout'>Logout</a>
     </div>
+  <form name="form">
+    <input name="url" ng-model='link' ng-pattern="rValidUrl"/>
+    <button type='submit' ng-click='addLink()' ng-disabled='form.url.$invalid'>Shorten!</button>
+  </form>
+  <p ng-show="form.url.$invalid">URL invalid {{ link }} </p>
 
-  <input ng-model='link'/>
-  <button type='submit' ng-click='shortenLink'>Shorten!</button>
+  <div>
+    <!-- <img src='/redirect_icon.png'/> -->
+    <div class='info'>
+      <!-- <div class='visits'><span class='count'>{{visits}}</span>Visits</div> -->
+      <div class='title'>{{title}}</div>
+      <!-- <div class='original'>{{url}}</div> -->
+      <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+    </div>
+  </div>
+
 </div>
 
 
