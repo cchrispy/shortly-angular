@@ -20,4 +20,9 @@ angular.module('shortly.links', [])
   //   $location.path(path);
   // };
 
+})
+.directive('shortenedLink', function() {
+  return {
+    templateUrl: 'app/directives/shortened-link.html'
+  };
 });
